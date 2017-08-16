@@ -3,4 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  validates :auth_token, uniqueness: true #presence: true,
+
+  def info
+    "#{email} - #{created_at}"
+  end
 end
