@@ -4,9 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :tasks, dependent: :destroy
+
   validates :auth_token, uniqueness: true #presence: true,
 
   before_create :generate_authentication_token!
+
 
   def info
     "#{email} - #{created_at} - Token: #{Devise.friendly_token}"
