@@ -48,10 +48,10 @@ end
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'devise'
-gem 'ransack'
-
-gem 'omniauth'
 gem 'devise_token_auth'
+gem 'omniauth'
+gem 'rails-i18n', '~> 5.0.0'
+gem 'ransack'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
